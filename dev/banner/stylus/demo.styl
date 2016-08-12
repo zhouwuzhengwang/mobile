@@ -1,0 +1,60 @@
+.banner
+	position relative
+	width 20rem
+	height 10rem
+	overflow hidden
+	a
+		position absolute
+		top 0
+		display block
+		width @width
+		height @height
+		background-size 100% 100%
+		background-repeat no-repeat
+		&:first-of-type
+			left 0
+		&:not(:first-of-type)
+			left 20rem
+		&.previous
+			animation previous .5s forwards
+		&.current
+			animation current .5s forwards
+		&.init
+			animation init .25s forwards
+		&.ltr
+			animation ltr .25s forwards
+		&.rtl
+			animation rtl .25s forwards
+	.indicator
+		position absolute
+		bottom .6rem
+		width 20rem
+		text-align center
+		z-index 2
+		em
+			margin-right .6rem
+			padding .06rem .36rem
+			background-color rgb(0, 128, 255)
+			font-size .75rem
+			color white
+			&.current
+				background-color rgb(255, 128, 0)
+@keyframes previous
+	from
+		left 0
+	to
+		left -20rem
+@keyframes current
+	from
+		left 20rem
+	to
+		left 0
+@keyframes init
+	to
+		left 0
+@keyframes ltr
+	to
+		left 20rem
+@keyframes rtl
+	to
+		left -20rem

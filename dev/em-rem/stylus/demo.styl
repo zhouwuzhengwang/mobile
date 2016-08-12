@@ -1,0 +1,81 @@
+/*px不会由于父级px样式影响子级px样式*/
+/*em会根据父级font-size样式进行等比缩放*/
+/*rem会根据父级中拥有px的根级样式进行等比缩放，如果没有则取html标签的px值，默认为16px*/
+gray = rgb(235, 235, 235)
+body
+	background-color gray
+header
+	position relative
+	width 20rem
+	height 2rem
+	background-color black
+	h1
+		text-align center
+		font-size 1rem
+		line-height 2rem
+		color white
+	i
+		position absolute
+		top .2rem
+		display block
+		width 1.6rem
+		height 1.6rem
+		background-color green
+		&.back
+			left .2rem
+		&.option
+			right .2rem
+.container
+	width 20rem
+	.row
+		position relative
+		padding-left 2.8rem
+		width 20rem
+		height 2.1rem
+		background-color white
+		font-size .75rem
+		line-height 2.1rem
+		&:before
+			position absolute
+			top .525rem
+			left @top
+			display block
+			width 1.05rem
+			height @width
+			background-size cover
+			content ""
+		&.single
+			margin .8rem 0
+		&.double:nth-of-type(2n)
+			margin-top .8rem
+			&:after
+				position absolute
+				bottom 0
+				left .5rem
+				width 19rem
+				transform scaleY(.5)
+				border-bottom .05rem solid gray
+				content ""
+		&.double:nth-of-type(2n+1)
+			margin-bottom .8rem
+		&.friend
+			&:before
+				background-color red
+		&.twoDCode
+			&:before
+				background-color orange
+		&.swag
+			&:before
+				background-color yellow
+		&.nearby
+			&:before
+				background-color green
+		&.floater
+			&:before
+				background-color cyan
+		&.shop
+			&:before
+				background-color blue
+		&.game
+			&:before
+				background-color purple

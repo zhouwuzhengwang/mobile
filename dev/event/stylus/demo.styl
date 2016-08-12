@@ -1,0 +1,16 @@
+.testTouch
+	width 20rem
+	height 20rem
+	background-color red
+	span
+		position absolute
+		font-size 3rem
+		color blue
+		&.rotate
+			animation rotate .5s
+		&.scale
+			font-size 6rem
+			transition font-size 1s
+@keyframes rotate
+	to
+		transform rotate(360deg)

@@ -1,0 +1,82 @@
+.article
+	h1
+		overflow hidden
+		white-space nowrap
+		text-overflow ellipsis
+	img
+		display block
+		
+/*大屏*/
+@media (min-width 415px) 
+	.article
+		margin 0 auto
+		padding 20px
+		width 1200px
+		h1
+			padding 0 80px
+			text-align center
+			font-size 36px
+			line-height 2
+		.time
+			text-align center
+		.author
+			padding-right 14px
+			text-align right
+			&:before
+				content "作者:"
+		img
+			margin 10px auto
+			width 320px
+			height @width
+		.content
+			text-indent 28px
+			font-size 14px
+			line-height 20px
+/*手机*/
+@media (max-width 414px)
+	.article
+		position relative
+		margin 5px
+		padding 5px
+		height 110px
+		h1
+			margin-left 105px
+			font-size 20px
+			line-height 24px
+		.time
+			position absolute
+			right 40px
+			bottom 5px
+			font-size 12px
+			.year
+				display none
+		.author
+			position absolute
+			right 5px
+			bottom 5px
+			font-size 12px
+		img
+			position absolute
+			top 5px
+			left 5px
+			width 100px
+			height @width
+		.content
+			display -webkit-box
+			overflow hidden
+			-webkit-line-clamp 3
+			-webkit-box-orient vertical
+			margin-top 5px
+			margin-left 105px
+			text-overflow ellipsis
+			font-size 12px
+			line-height 16px
+@media (max-width 320px)
+	.article
+		width 310px
+@media (max-width 375px) and (min-width 321px)
+	.article
+		width 365px
+@media (max-width 414px) and (min-width 376px)
+	.article
+		width 404px
